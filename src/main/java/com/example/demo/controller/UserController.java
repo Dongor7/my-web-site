@@ -55,7 +55,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/")
-    public String index(Model model){
+    public String index(){
         return "index";
     }
 

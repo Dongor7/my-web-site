@@ -28,8 +28,8 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
 
             <div class="btn-group navbar-right">
-                <button type="button" class="btn btn-warning navbar-btn">Sign in</button>
-                <button type="button" class="btn btn-info navbar-btn">Sign up</button>
+                <button type="button" class="btn btn-warning navbar-btn" onclick="window.location='${contextPath}/login'">Sign in</button>
+                <button type="button" class="btn btn-info navbar-btn" onclick="window.location='${contextPath}/registration'">Sign up</button>
             </div>
 
             <ul class="nav navbar-nav">
@@ -53,7 +53,7 @@
         <h2 class="form-heading">Log in</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
-            <span>${message}</span>
+            <span th:text="${message}">${message}</span>
             <input name="username" type="text" class="form-control" placeholder="Username"
                    autofocus="true"/>
             <input name="password" type="password" class="form-control" placeholder="Password"/>
