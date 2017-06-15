@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en" xmlns:th="http://www.thymeleaf.org">
+        <head>
+            <meta charset="UTF-8"/>
+            <title>Index</title>
+
+            <link  rel="stylesheet"
+                   href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+                   th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+            <script th:src="@{/webjars/jquery/3.2.0/jquery.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+        </head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="" class="navbar-brand">Brand</a>
+        </div><!-- Navbar Header-->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+
+            <div class="btn-group navbar-right">
+                <button type="button" class="btn btn-warning navbar-btn">Sign in</button>
+                <button type="button" class="btn btn-info navbar-btn">Sign up</button>
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li><a href="#management">Management</a></li>
+            </ul>
+
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search"/>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+        </div>
+    </div><!-- End Container-->
+</nav><!-- End navbar -->
+
+<div class="container">
+
+    <form:form method="POST" modelAttribute="userForm" class="form-signin">
+        <h2 class="form-signin-heading">Create your account</h2>
+        <spring:bind path="username">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="username" class="form-control" placeholder="Username"
+                            autofocus="true"></form:input>
+                <form:errors path="username"></form:errors>
+            </div>
+        </spring:bind>
+
+        <spring:bind path="password">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
+                <form:errors path="password"></form:errors>
+            </div>
+        </spring:bind>
+
+        <spring:bind path="passwordConfirm">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="password" path="passwordConfirm" class="form-control"
+                            placeholder="Confirm your password"></form:input>
+                <form:errors path="passwordConfirm"></form:errors>
+            </div>
+        </spring:bind>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form:form>
+
+</div>
+
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
